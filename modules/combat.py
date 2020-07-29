@@ -274,6 +274,7 @@ class CombatModule(object):
         # enhancecement and retirement flags
         enhancement_failed = False
         retirement_failed = False
+        Logger.log_warning("cerca info")
         while not (Utils.find("combat/menu_loading", 0.8)):
             Utils.update_screen()
             if Utils.find("menu/button_sort"):
@@ -299,7 +300,7 @@ class CombatModule(object):
                 break
             else:
                 Utils.touch_randomly(self.region["menu_combat_start"])
-                Utils.script_sleep(1)
+                Utils.script_sleep(4)
 
         Utils.script_sleep(4)
 
