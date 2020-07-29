@@ -288,7 +288,7 @@ class CombatModule(object):
                     self.exit = 4
                     Utils.touch_randomly(self.region['close_info_dialog'])
                     return False
-            elif Utils.find("combat/alert_morale_low") or Utils.find("menu/alert_info"):
+            elif Utils.find("combat/alert_morale_low") or Utils.find("menu/alert_info") or Utils.find("menu/button_confirm"):
                 if self.config.combat['ignore_morale']:
                     Utils.find_and_touch("menu/button_confirm")
                 else:
