@@ -287,7 +287,7 @@ class CombatModule(object):
                     self.exit = 4
                     Utils.touch_randomly(self.region['close_info_dialog'])
                     return False
-            elif Utils.find("combat/alert_morale_low"):
+            elif Utils.find("combat/alert_morale_low") or Utils.find("menu/alert_info"):
                 if self.config.combat['ignore_morale']:
                     Utils.find_and_touch("menu/button_confirm")
                 else:
@@ -297,8 +297,6 @@ class CombatModule(object):
             elif Utils.find("combat/combat_pause", 0.7):
                 Logger.log_warning("Loading screen was not found but combat pause is present, assuming combat is initiated normally.")
                 break
-            elif Utils.find("menu/alert_info"):
-                Utils.find_and_touch("menu/button_confirm")
             else:
                 Utils.touch_randomly(self.region["menu_combat_start"])
                 Utils.script_sleep(1)
